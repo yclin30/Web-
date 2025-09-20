@@ -1,0 +1,91 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Arial, sans-serif;
+}
+
+body {
+  background-color: #f9f9f9;
+  padding: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.container {
+  max-width: 600px;
+  width: 100%;
+  height: auto;
+  margin: 0 auto;
+  padding: 30px;
+  border: 8px #ccc;
+  border-radius: 5px;
+  background-color: #f9f9f9;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+}
+
+h1 {
+  text-align: center;
+  margin-bottom: 1.2rem;
+}
+
+label {
+  display: block;
+  margin-bottom: 5px;
+}
+
+input {
+  width: 100%;
+  padding: 8px;
+  margin-bottom: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+input:focus {
+  border-color: #2657d3;
+  outline: none;
+}
+
+button {
+  width: 100%;
+  padding: 10px;
+  background-color: #2657d3;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #370ab3;
+}
+
+small {
+  visibility: hidden;
+  position: absolute;
+  display: block;
+  bottom: -18px;
+  font-size: 12px;
+}
+
+form-item error input {
+  border-color: #e74c3c;
+}
+
+form-item error small {
+  visibility: visible;
+  color: #e74c3c;
+  position: absolute;
+}
+
+form-item success input {
+  border-color: #2ecc71;
+}
+
+form-item success small {
+  visibility: hidden;
+}

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="style.css">
+
+
+</head>
+
+<body>
+  <div class="container">
+    <h1>注册</h1>
+    <form action="/register" method="POST">
+      <label for="username">用户名：</label>
+      <input type="text" id="username" name="username" placeholder="enter username" required><br>
+
+      <small>用户名必须是 3-16 个字符，且只能包含字母、数字和下划线。</small><br>
+
+      <label for="email">邮箱：</label>
+      <input type="email" id="email" name="email" placeholder="enter email" required><br>
+      <small>请输入有效的邮箱地址。</small><br>
+      <label for="password">密码：</label>
+      <input type="password" id="password" name="password" placeholder="enter password" required><br>
+      <small>密码必须至少包含 8 个字符，且包含大小写字母、数字和特殊字符。</small><br>
+      <label for="confirm_password">确认密码：</label>
+      <input type="password" id="confirm_password" name="confirm_password" placeholder="confirm password" required><br>
+      <small>请再次输入密码以确认。</small><br>
+      <button type="submit">注册</button>
+    </form>
+  </div>
+
+
+</body>
+
+
+
+</html>

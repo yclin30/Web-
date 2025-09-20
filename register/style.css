@@ -72,20 +72,21 @@ small {
   font-size: 12px;
 }
 
-form-item error input {
+.form-item {
+  margin-bottom: 20px;
+  position: relative;
+}
+
+.form-item.error input {
   border-color: #e74c3c;
 }
 
-form-item error small {
+.form-item.error small {
   visibility: visible;
   color: #e74c3c;
   position: absolute;
 }
 
-form-item success input {
+.form-item.success input {
   border-color: #2ecc71;
-}
-
-form-item success small {
-  visibility: hidden;
 }

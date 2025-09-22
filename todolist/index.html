@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>todo</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+    integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+
+<body>
+  <div class="app">
+    <h1><i class="fa-solid fa-check-circle"></i>
+      待办事项</h1>
+  </div>
+  <div class="todo-input">
+    <input type="text" id="todo-input" placeholder="添加新的待办事项...">
+    <button id="add-button"><i class="fa-solid fa-plus"></i></button>
+  </div>
+
+  <div class="filter">
+    <span id="filter active" data-filter="all">全部</span>
+    <span id="filter" data-filter="active">未完成</span>
+    <span id="filter" data-filter="completed">已完成</span>
+  </div>
+  <ul id="todo-list">
+    <!-- 待办事项将被添加到这里 -->
+  </ul>
+  <div class="todos-container">
+    <ul id="todos-list">
+      <!-- 待办事项将被添加到这里 -->
+      <li class="todo-item">
+        <label class="checkbox-container">
+          <input type="checkbox" class="todo-checkbox">
+          <span class="checkmark"></span>
+        </label>
+        <span class="todo-item-text">示例待办事项</span>
+        <button class="delete-btn"><i class="fa-solid fa-times"></i></button>
+      </li>
+    </ul>
+    <div class="empty-state message">
+      <i class="fa-solid fa-clipboard-list"></i>
+      <p>没有待办事项</p>
+    </div>
+  </div>
+  <footer>
+    <span class="item-left">0</span>
+    <button id="clear-completed">清除已完成</button>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+
+</html>

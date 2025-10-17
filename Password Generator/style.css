@@ -1,0 +1,266 @@
+:root {
+  --primary-color: #2b5876;
+  /* Fixed typo */
+  --secondary-color: #4e4376;
+  --weakcolor: #f56565;
+  --mediumcolor: #ed8936;
+  --strongcolor: #48bb78;
+  --verystrongcolor: #4299e1;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+  background: linear-gradient(45deg, var(--primary-color), var(--secondary-color));
+  /* Fixed property and variable */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+}
+
+.container {
+  background: #fff;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  width: 90%;
+  max-width: 400px;
+  text-align: center;
+}
+
+h1 {
+  margin-bottom: 20px;
+  color: var(--primary-color);
+  text-align: center;
+  margin-bottom: 1.8rem;
+  font-size: 1.8rem;
+  font-weight: 700;
+  position: relative;
+  padding-bottom: 0.5rem;
+}
+
+h1::after {
+  content: "";
+  position: absolute;
+  bottom: 0px;
+  height: 3px;
+  background: linear-gradient(90deg, var(--primary-color), var(--secondary-color));
+  left: 50%;
+  transform: translateX(-50%);
+  width: 50%;
+  border-radius: 3px;
+}
+
+.password-container {
+  height: 60px;
+  margin-bottom: 2rem;
+  background-color: #f8fafc;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 1rem 0 0;
+}
+
+#password {
+  width: 100%;
+  padding: 1.2rem;
+  font-size: 20px;
+  border: none;
+  outline: none;
+  background: transparent;
+  color: #333;
+}
+
+#copy-btn {
+  cursor: pointer;
+  color: #718096;
+  padding: 1rem;
+  transition: background 0.3s ease;
+}
+
+#copy-btn:hover {
+  background: var(--primary-color);
+}
+
+.options {
+  background-color: #f8fafc;
+  margin-bottom: 2rem;
+  padding: 1.5rem;
+  border-radius: 10px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.option {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1rem;
+}
+
+.option:last-child {
+  margin-bottom: 0;
+}
+
+.option label {
+  font-size: 1rem;
+  color: #333;
+  font-weight: 500;
+}
+
+.option input[type="checkbox"] {
+  width: 20px;
+  height: 20px;
+  cursor: pointer;
+  border: 2px solid var(--primary-color);
+  accent-color: var(--primary-color);
+  border-radius: 5px;
+  outline: none;
+  position: relative;
+  transition: all 0.3s ease;
+}
+
+#length-value {
+  font-weight: 700;
+  color: var(--primary-color);
+  text-align: center;
+  margin-left: 10px;
+  width: 30px;
+}
+
+.option input[type="checkbox"]:checked {
+  background-color: var(--primary-color);
+  border-color: var(--primary-color);
+  content: "✓";
+
+}
+
+input[type="range"] {
+  color: var(--primary-color);
+  height: 5px;
+  flex: 1;
+  cursor: pointer;
+}
+
+.option input[type="checkbox"]:checked::after {
+  content: "\2714";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 1.2rem;
+  color: #fff;
+}
+
+button {
+  width: 100%;
+  padding: 1rem;
+  background: linear-gradient(45deg, var(--primary-color), var(--secondary-color));
+  color: #fff;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  border-radius: 10px;
+  transition: all 0.3s ease;
+  margin-bottom: 1.5rem;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+button:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+}
+
+button:active {
+  transform: translateY(0);
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.strength-container {
+  margin-top: 1rem;
+}
+
+.strength-container {
+  font-size: 0.9rem;
+  color: #4a5568;
+  margin-bottom: 0.6rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-weight: 500;
+}
+
+.strength-label {
+  font-weight: 600;
+  color: var(--primary-color);
+}
+
+.strength-meter {
+  width: 100%;
+  height: 10px;
+  background: #e2e8f0;
+  border-radius: 5px;
+  overflow: hidden;
+  box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.1);
+  margin: 0.5rem 0 1rem 0;
+}
+
+.strength-bar {
+  height: 100%;
+  width: 0;
+  min-width: 5%;
+  background-color: var(--weakcolor);
+  transition: all 0.3s ease;
+  border-radius: 5px;
+}
+
+@media (max-width: 480px) {
+  .container {
+    padding: 15px;
+  }
+
+  h1 {
+    font-size: 1.5rem;
+    margin-bottom: 1.5rem;
+  }
+
+  .password-container {
+    height: 50px;
+    margin-bottom: 1.5rem;
+  }
+
+  #password {
+    font-size: 1.2rem;
+    padding: 0.8rem;
+  }
+
+  #copy-btn {
+    padding: 0.8rem;
+  }
+
+  .options {
+    padding: 1rem;
+    margin-bottom: 1.5rem;
+  }
+
+  .option label {
+    font-size: 0.9rem;
+  }
+
+  button {
+    padding: 0.8rem;
+    font-size: 0.9rem;
+    margin-bottom: 1rem;
+  }
+}

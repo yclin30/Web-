@@ -1,0 +1,128 @@
+/* --- 全局和基础样式 --- */
+:root {
+  --card-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  --card-hover-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+  --background-color: #f4f7f6;
+  --text-color: #333;
+  --card-bg-color: #ffffff;
+}
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  margin: 0;
+  padding: 20px;
+  background-color: var(--background-color);
+  color: var(--text-color);
+}
+
+/* --- 头部标题 --- */
+header h1 {
+  text-align: center;
+  margin-bottom: 40px;
+  font-size: 2.5em;
+  color: var(--text-color);
+}
+
+/* --- 卡片容器 (Flexbox 布局) --- */
+.card-container {
+  display: flex;
+  flex-wrap: wrap;
+  /* 允许卡片换行 */
+  justify-content: center;
+  /* 水平居中所有卡片 */
+  gap: 30px;
+  /* 卡片之间的间距 */
+  padding: 0 10px;
+}
+
+/* --- 卡片链接和卡片本体 --- */
+.card-link {
+  text-decoration: none;
+  /* 去除链接下划线 */
+  color: inherit;
+  /* 继承父元素颜色 */
+}
+
+.card {
+  width: 300px;
+  /* 固定卡片宽度 */
+  background-color: var(--card-bg-color);
+  border-radius: 10px;
+  box-shadow: var(--card-shadow);
+  overflow: hidden;
+  /* 隐藏超出圆角的部分 */
+  display: flex;
+  flex-direction: column;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  /* 平滑过渡效果 */
+}
+
+/* --- 卡片 Hover 效果 --- */
+.card:hover {
+  transform: translateY(-10px);
+  /* 向上浮动10px */
+  box-shadow: var(--card-hover-shadow);
+}
+
+/* --- 卡片图片 --- */
+.card img {
+  width: 100%;
+  height: 180px;
+  /* 固定图片高度 */
+  object-fit: cover;
+  /* 保持图片比例，裁剪多余部分 */
+  display: block;
+}
+
+/* --- 卡片标题 --- */
+.card-title {
+  padding: 20px;
+  text-align: center;
+  /* 文字水平居中 */
+  font-size: 1.2em;
+  font-weight: bold;
+}
+
+.card-title p {
+  margin: 0;
+}
+
+
+/* --- 移动设备适配 (响应式设计) --- */
+@media (max-width: 768px) {
+  body {
+    padding: 15px;
+  }
+
+  header h1 {
+    font-size: 2em;
+    margin-bottom: 30px;
+  }
+
+  .card-container {
+    gap: 20px;
+  }
+
+  /* 在小屏幕上，卡片宽度可以稍微调整 */
+  .card {
+    width: 280px;
+  }
+}
+
+@media (max-width: 480px) {
+  header h1 {
+    font-size: 1.5em;
+  }
+
+  /* 在非常小的屏幕上，让卡片宽度接近屏幕宽度 */
+  .card-container {
+    padding: 0;
+  }
+
+  .card {
+    width: calc(100vw - 40px);
+    /* 视口宽度减去一些边距 */
+    max-width: 300px;
+    /* 但最大不超过300px */
+  }
+}
